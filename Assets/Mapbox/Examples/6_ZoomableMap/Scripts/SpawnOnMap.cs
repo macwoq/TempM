@@ -32,7 +32,7 @@
 
 		List<GameObject> _spawnedObjects;
 		[SerializeField] SpawnMarker spawn;
-
+		string prefix = "Punkt ";
 		public int pNumber;
 		void Start()
 		{
@@ -63,6 +63,7 @@
 					var location = _locations[i];
 					spawnedObject.transform.localPosition = _map.GeoToWorldPosition(location, true);
 					spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
+					spawnedObject.name = prefix + i.ToString();
 				}
 			}
 		}

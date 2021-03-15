@@ -48,6 +48,7 @@
 
 		public void Update()
 		{
+			PanMapUsingTouchOrMouse();
 			if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject())
 			{
 				_dragStartedOnUI = true;

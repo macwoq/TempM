@@ -37,7 +37,7 @@ public class PinProps : Singleton<PinProps>
     public void getName()
     {
         nameObj = gameObject.GetComponentInParent<Transform>().name;
-        cordsT.text = cords;
+        cordsT.text = "Coordinates " + cords;
         nameT.text = nameObj;
     }
 

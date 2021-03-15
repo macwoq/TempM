@@ -17,7 +17,7 @@ public class SpawnMarker : Singleton<SpawnMarker>
 {
 
     public int pNumber;
-    public string prefix = "pin";
+    public string prefix = "Punkt ";
 
     public string[] descriptions;
     public string desc;
@@ -60,7 +60,7 @@ public class SpawnMarker : Singleton<SpawnMarker>
                 var location = positions[i];
                 spawnedObject.transform.localPosition = map.GeoToWorldPosition(location, true);
                 spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
-                spawnedObject.name = prefix + i.ToString();
+                spawnedObject.name = "Punkt " + i.ToString();
                 //spawnedObject pNumber =  + i;
 
             }
@@ -99,6 +99,8 @@ public class SpawnMarker : Singleton<SpawnMarker>
         positions.Add(latlongDelta);
 
         positionsString.Add(latlongDelta.ToString());
+        var c = Conversions.StringToLatLon(positionsString[0]);
+        print(c.ToString());
 
         var instance = Instantiate(marker);
         instance.transform.localPosition = map.GeoToWorldPosition(positions[0], true);
