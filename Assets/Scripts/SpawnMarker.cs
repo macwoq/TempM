@@ -92,6 +92,7 @@ public class SpawnMarker : Singleton<SpawnMarker>
         var mousePosScreen = Input.mousePosition;
         mousePosScreen.z = cam.transform.localPosition.y;
         var pos = cam.ScreenToWorldPoint(mousePosScreen);
+        var camPos = cam.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height, Camera.main.nearClipPlane));
         var posPlayer = playerPos.transform.localPosition;
 
         var latlongDelta = map.WorldToGeoPosition(posPlayer);
